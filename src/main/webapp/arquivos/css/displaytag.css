@@ -1,0 +1,135 @@
+TABLE.displaytag {
+	        border: 3px solid #f0f0f0;
+ 	}
+ 	
+ 	TABLE.displaytag TH {
+ 	   background: #f0f0f0;
+ 	   font-size: 11px;
+ 	   color: #333333;
+	   font-weight: bold;
+ 	   font-family: Verdana, Arial, Helvetica, sans-serif;
+ 	   text-align: center;
+ 	   padding: 3px;
+ 	   border-bottom: 1px solid #ccc;
+ 	}
+ 	
+ 	TABLE.displaytag TD {
+ 	   font-size: 10px;
+ 	   color: #333333;
+ 	   font-family: Arial, Helvetica, sans-serif;
+ 	   font-weight: bold;
+ 	   padding: 2px 3px 2px 3px;
+ 	   margin: 1px;
+ 	}
+ 	
+ 	TABLE.displaytag TD a {
+ 	       text-decoration: none;
+ 	}
+ 	
+ 	TABLE.displaytag TD a:hover {
+ 	       color: #009900;
+ 	}
+ 	
+ 	TABLE.displaytag TD img {
+ 	        border: 0;
+ 	}
+ 	
+ 	TABLE.displaytag TD.rightalign {
+ 	        text-align: right;
+ 	}
+ 	
+ 	TABLE.displaytag TD.centeralign {
+ 	        text-align: center;
+ 	}
+ 	
+ 	TABLE.displaytag TR.odd TD {
+ 	        background-color: #fff;
+ 	}
+
+	TABLE.displaytag TR.even TD {
+ 	        background-color: #EEEED1;
+ 	}
+ 	
+ 	TABLE.displaytag TH.sorted {
+ 	        background-color: #f0f0f0;
+ 	}
+ 	
+ 	TABLE.displaytag TH.sorted a,
+ 	TABLE.displaytag TH.sortable a {
+ 	        display: block;
+ 	        background: url(../imgs/displaytag/arrow_off.png) no-repeat right;
+ 	        color: #000000;
+ 	        text-decoration: none;
+ 	}
+ 	
+ 	TABLE.displaytag TH.sorted a:hover,
+ 	TABLE.displaytag TH.sortable a:hover {
+ 	        color: #000;
+ 	}
+ 	
+ 	TABLE.displaytag TH.order1 a {
+ 	        background-image: url(../imgs/displaytag/arrow_down.png);
+ 	}
+ 	
+ 	TABLE.displaytag TH.order2 a {
+ 	        background-image: url(../imgs/displaytag/arrow_up.png);
+ 	}
+ 	
+ 	span.pagebanner {
+ 	        font-size: 10px;
+ 	        color: #333333;
+ 	        font-weight: bold;
+ 	        font-family: Arial, Helvetica, sans-serif;
+ 	        background-color: #fbfbfb;
+ 	        border: 1px solid #f0f0f0;
+ 	        padding: 2px 4px 2px 4px;
+ 	        margin-top: 0px;
+ 	        margin-bottom: 0px;
+ 	        display:block;
+ 	        border-bottom: none;
+ 	        text-align: center;
+ 	}
+ 	
+ 	span.pagelinks {
+ 	        font-size: 10px;
+ 	        color: #333333;
+ 	        font-weight: bold;
+ 	        font-family: Arial, Helvetica, sans-serif;
+ 	        background-color: #fbfbfb;
+ 	        border: 1px solid #f0f0f0;
+ 	        padding: 2px 4px 2px 4px;
+ 	        display:block;
+ 	        border-top: none;
+ 	        margin-bottom: 5px;
+ 	        text-align: center;
+ 	}
+ 	
+ 	span.pagelinks a {
+ 	        color: #00f;
+ 	}
+ 	
+ 	span.pagelinks a:hover {
+ 	        color: #f00;
+ 	}
+ 	
+ 	div.exportlinks {
+ 	        font-size: 0.8em;
+ 	        padding: 2px 4px 2px 4px;
+ 	        margin: 0 0 10px 0;
+ 	}
+ 	
+ 	span.export {
+ 	        padding: 0 4px 1px 20px;
+ 	        display: inline;
+ 	        cursor: pointer;
+ 	}
+ 	
+ 	span.excel {
+ 	        background: url(../imgs/displaytag/ico_file_excel.png) no-repeat;
+ 	}
+ 	span.csv {
+ 	        background: url(../imgs/displaytag/ico_file_csv.png) no-repeat;
+ 	}
+ 	span.xml {
+ 	        background: url(../imgs/displaytag/ico_file_xml.png) no-repeat;
+ 	}

@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+
+
+<!-- ================================================ Form Bean Definitions -->
+
+    <form-beans>
+    
+		<form-bean name="loginUser"
+            	type="org.apache.struts.action.DynaActionForm">
+            <form-property
+                name="username"
+                type="java.lang.String"/>
+            <form-property
+                name="password1"
+                type="java.lang.String"/>
+            
+        </form-bean>
+        
+        <form-bean name="fornecedorForm" type="br.com.cevada.controller.impl.FornecedorForm"></form-bean>
+        <form-bean name="loteForm" type="br.com.cevada.controller.impl.LoteForm"></form-bean>
+        <form-bean name="vendedorForm" type="br.com.cevada.controller.impl.VendedorForm"></form-bean>
+        <form-bean name="estoqueEntradaForm" type="br.com.cevada.controller.impl.EstoqueEntradaForm"></form-bean>
+        <form-bean name="vendaForm" type="br.com.cevada.controller.impl.VendaForm"></form-bean>
+
+    </form-beans>
+
+
+<!-- ========================================= Global Exception Definitions -->
+
+    <global-exceptions>
+
+    </global-exceptions>
+
+
+<!-- =========================================== Global Forward Definitions -->
+
+    <global-forwards>
+        <forward
+            name="welcome"
+            path="/Welcome.do"/>
+    </global-forwards>
+
+
+<!-- =========================================== Action Mapping Definitions -->
+
+    <action-mappings>
+
+
+
+<!-- Login do usuario -->	
+
+	<action path="/loginUsuario"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="dispatch"
+			scope="request">
+			
+	<forward name="logado" path="/pages/principal.jsp"></forward>
+    <forward name="login" path="/index.jsp"></forward>
+		
+	</action>
+
+	<!-- Redireciona para tela principal 	-->	
+	<action path="/principal" forward ="/pages/principal.jsp" />
+		
+	
+<!-- Redireciona para tela de cadastro de usuario 	-->	
+	<action path="/cadastroUsuario" forward ="/pages/usuario/cadastroUsuario.jsp" />	
+
+<!-- Redireciona para tela de busca de usuario 	-->	
+	<action path="/buscaUsuario" forward ="/pages/usuario/buscaUsuarios.jsp" />
+		
+
+<!-- Redireciona para tela de cadastro de clientes 	-->	
+	<action path="/cadastroCliente" forward ="/pages/cliente/cadastroCliente.jsp" />
+		
+
+<!-- Redireciona para tela de busca de cliente 	-->	
+	<action path="/buscaCliente" forward ="/pages/cliente/buscaCliente.jsp" />
+	
+	
+<!-- Redireciona para tela de cadastro de perfumes 	-->	
+	<action path="/cadastroPerfume" forward ="/pages/perfume/cadastroPerfume.jsp" />
+		
+
+<!-- Redireciona para tela de busca de perfumes 	-->	
+	<action path="/buscaPerfume" forward ="/pages/perfume/buscaPerfume.jsp" />
+	
+	
+<!-- Redireciona para tela de cadastro de fornecedores 	-->	
+	<action path="/cadastroFornecedor" forward ="/pages/fornecedor/cadastroFornecedor.jsp" />
+		
+
+<!-- Redireciona para tela de busca de fornecedores 	-->	
+	<action path="/buscaFornecedor" forward ="/pages/fornecedor/buscaFornecedor.jsp" />
+	
+	
+<!-- Redireciona para tela de cadastro de vendedores 	-->	
+	<action path="/cadastroVendedor" forward ="/pages/vendedor/cadastroVendedor.jsp" />
+		
+
+<!-- Redireciona para tela de busca de vendedores 	-->	
+	<action path="/buscaVendedor" forward ="/pages/vendedor/buscaVendedor.jsp" />
+	
+<!-- Redireciona para tela de busca de vendedores 	-->	
+	<action path="/controlarEstoque" forward ="/pages/estoque/controlarEstoque.jsp" />	
+	
+
+<!-- Manter Usuario -->	
+	<action path="/manterUsuario"
+			type="org.springframework.web.struts.DelegatingActionProxy"	
+			parameter="dispatch"
+			scope="request">
+			
+		<forward name="resultadoBuscaUsuario" path="/pages/usuario/buscaUsuarios.jsp"></forward>	
+    	<forward name="usuarioCadastrado" path="/pages/principal.jsp"></forward>
+		<forward name="login" path="/login.jsp"></forward>
+		<forward name="falha" path="/falha.jsp"></forward>
+		<forward name="edit" path="/pages/usuario/cadastroUsuario.jsp" ></forward>
+			
+	</action>
+			
+
+<!-- Manter Cliente -->	
+		<action path="/manterCliente"
+			type="org.springframework.web.struts.DelegatingActionProxy"	
+			parameter="dispatch"
+			scope="request">
+			
+		<forward name="resultadoBuscaCliente" path="/pages/cliente/buscaCliente.jsp"></forward>	
+	    <forward name="clienteCadastrado" path="/pages/principal.jsp"></forward>
+	    <forward name="editarCliente" path="/pages/cliente/editarCliente.jsp"></forward>
+		<forward name="login" path="/login.jsp"></forward>
+		<forward name="falha" path="/falha.jsp"></forward>	
+		
+	</action>
+	
+	
+	<!-- Manter Perfume -->	
+	<action path="/manterPerfume"
+			type="org.springframework.web.struts.DelegatingActionProxy"	
+			parameter="dispatch"
+			scope="request">
+			
+	<forward name="resultadoBuscaPerfume" path="/pages/perfume/buscaPerfume.jsp"></forward>	
+    <forward name="perfumeCadastrado" path="/pages/principal.jsp"></forward>
+    <forward name="editarPerfume" path="/pages/perfume/editarPerfume.jsp"></forward>
+	<forward name="login" path="/login.jsp"></forward>
+		
+		
+		<forward name="falha" path="/falha.jsp"></forward>	
+	</action>	
+	
+	
+	<!-- Manter fornecedor -->	
+	<action path="/manterFornecedor"
+			type="org.springframework.web.struts.DelegatingActionProxy"	
+			parameter="dispatch"
+			scope="request" name="fornecedorForm">
+			
+		<forward name="busca" path="/pages/fornecedor/buscaFornecedor.jsp"></forward>	
+    	<forward name="cadastro" path="/pages/fornecedor/cadastroFornecedor.jsp"></forward>
+    	<forward name="pergunta" path="/pages/fornecedor/pergunta.jsp"></forward>
+		<forward name="falha" path="/falha.jsp"></forward>	
+	</action>
+	
+	
+	<!-- Manter lote -->	
+	<action path="/manterLote"
+			type="org.springframework.web.struts.DelegatingActionProxy"	
+			parameter="dispatch"
+			scope="request" name="loteForm">
+			
+		<forward name="busca" path="/pages/lote/buscaLote.jsp"></forward>	
+    	<forward name="cadastro" path="/pages/lote/cadastroLote.jsp"></forward>
+    	<forward name="pergunta" path="/pages/lote/pergunta.jsp"></forward>
+		<forward name="falha" path="/falha.jsp"></forward>	
+	</action>
+	
+	
+	<!-- Manter vendedor -->	
+	<action path="/manterVendedor"
+			type="org.springframework.web.struts.DelegatingActionProxy"	
+			parameter="dispatch"
+			scope="request" name="vendedorForm">
+			
+		<forward name="busca" path="/pages/vendedor/buscaVendedor.jsp"></forward>	
+    	<forward name="cadastro" path="/pages/vendedor/cadastroVendedor.jsp"></forward>
+    	<forward name="pergunta" path="/pages/vendedor/pergunta.jsp"></forward>
+		<forward name="falha" path="/falha.jsp"></forward>	
+	</action>		
+	
+	
+	<!-- Manter estoque -->	
+	<action path="/manterEstoque"
+			type="org.springframework.web.struts.DelegatingActionProxy"	
+			parameter="dispatch"
+			scope="request" name="loteForm">
+		
+		<forward name="buscaLote" path="/pages/lote/buscaLote.jsp"></forward>
+		<forward name="detalhes" path="/pages/estoque/distribuicaoVendedor.jsp"></forward>	
+		<forward name="controlar" path="/pages/estoque/controlarEstoque.jsp"></forward>
+		<forward name="alterar" path="/pages/estoque/alterarEstoque.jsp"></forward>	
+		<forward name="falha" path="/falha.jsp"></forward>	
+	</action>		
+	
+	
+	<!-- Manter venda -->	
+	<action path="/manterVenda"
+			type="org.springframework.web.struts.DelegatingActionProxy"	
+			parameter="dispatch"
+			scope="request" name="vendaForm">
+			
+		<forward name="search" path="/pages/venda/buscaVenda.jsp"></forward>	
+    	<forward name="createEdit" path="/pages/venda/cadastroVenda.jsp"></forward>
+    	<forward name="pergunta" path="/pages/venda/pergunta.jsp"></forward>
+    	<forward name="pgto" path="/pages/venda/lancarPagamentos.jsp"></forward>
+		<forward name="falha" path="/falha.jsp"></forward>	
+	</action>	
+	
+	<action path="/sair"
+			type="br.com.cevada.controller.impl.SairAction"	
+			scope="request" >
+		<forward name="falha" path="/falha.jsp"></forward>	
+	</action>	
+	
+    </action-mappings>
+
+
+<!-- ======================================== Message Resources Definitions -->
+
+    <message-resources parameter="MessageResources"  null="false"/>
+
+
+<!-- =============================================== Plug Ins Configuration -->
+
+  <!-- ======================================================= Tiles plugin -->
+  <!--
+     This plugin initialize Tiles definition factory. This later can takes some
+	 parameters explained here after. The plugin first read parameters from
+	 web.xml, thenoverload them with parameters defined here. All parameters
+	 are optional.
+     The plugin should be declared in each struts-config file.
+       - definitions-config: (optional)
+            Specify configuration file names. There can be several comma
+		    separated file names (default: ?? )
+       - moduleAware: (optional - struts1.1)
+            Specify if the Tiles definition factory is module aware. If true
+            (default), there will be one factory for each Struts module.
+			If false, there will be one common factory for all module. In this
+            later case, it is still needed to declare one plugin per module.
+            The factory will be initialized with parameters found in the first
+            initialized plugin (generally the one associated with the default
+            module).
+			  true : One factory per module. (default)
+			  false : one single shared factory for all modules
+	   - definitions-parser-validate: (optional)
+	        Specify if xml parser should validate the Tiles configuration file.
+			  true : validate. DTD should be specified in file header (default)
+			  false : no validation
+
+	  Paths found in Tiles definitions are relative to the main context.
+
+      To use this plugin, download and add the Tiles jar to your WEB-INF/lib
+      directory then uncomment the plugin definition below.
+
+    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+
+      <set-property property="definitions-config"
+                       value="/WEB-INF/tiles-defs.xml" />
+      <set-property property="moduleAware" value="true" />
+    </plug-in>
+  -->  
+
+
+  <!-- =================================================== Validator plugin -->
+
+<!--    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+    <set-property
+        property="pathnames"
+        value="/org/apache/struts/validator/validator-rules.xml,
+               /WEB-INF/validation.xml"/>
+  </plug-in>
+-->
+</struts-config>
+

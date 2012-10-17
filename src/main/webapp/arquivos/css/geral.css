@@ -1,0 +1,350 @@
+/* ----- GERAL ------ */
+*{MARGIN:0px; PADDING:0px;}
+
+a{TEXT-DECORATION: none;}
+
+a:hover{TEXT-DECORATION:underline;}
+
+a:link{text-decoration:none;}
+
+a.cursor{cursor: pointer;}
+
+body{
+	BACKGROUND: #FFFFFF url(../images/bg_fundo.gif) repeat-x;
+}
+
+.Modal {
+	font-family: Arial, Helvetica, sans-serif;
+	text-align:center;
+	font-size: 16px;
+	font-weight: bold;
+	color:#000;
+		
+}
+
+#DivGeralTopo {
+	width: 100%;
+	height:80px;
+	position:relative;
+	
+}
+#DivLogo {
+	width: 80px;
+	height:80px;
+	float:left;
+	position:relative;
+}
+#DivFinalizar {
+	height:20px;
+	float:right;
+	margin-bottom:3px;
+	text-align:right;
+}
+
+
+#DivFeedBack a{
+	COLOR: #333333;
+}
+
+#DivFeedBack span{
+	float:right;
+	margin-top: -30px;
+	margin-right:5px;
+	
+}
+
+#DivGeral {
+	width: 100%;
+	height 100%;
+	margin: 5px auto;
+}
+#DivRodape {
+	width: 100%;
+	height:17px;
+	margin: 0px auto;
+	text-align:center;
+	border-left: solid 1px #ADADAD;
+	border-right: solid 1px #ADADAD;
+	position: fixed;
+	bottom:0;
+	background-color: #D61920;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	FONT-SIZE: 0.6em;
+	COLOR: #FFFFFF;
+	padding-top:3px;
+
+}
+
+#DivFeedBack {
+	FONT-FAMILY: arial,verdana,tahoma;
+	FONT-SIZE: 11px;
+	COLOR: #333333;
+	width: 95%;
+	height: 13px;
+	margin: 15px 0 2px 0;
+	padding: 15px 0 0 8px;
+	text-decoration: none;
+}
+
+#DivConteudo{	
+	height:100%;
+	width: 95%;
+	border-width: 1px ;
+	border-style: solid;
+	border-color:#ADADAD;
+	margin: 10px auto;
+	padding:8px;
+	
+}
+
+#divTextoConteudo{
+	height: 0px;
+	width: 940px;
+	border-width: 0px ;
+	border-style: solid;
+	border-color:#ADADAD;
+	
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	FONT-SIZE: 0.9em;
+	COLOR: #333333;
+	margin: 2px 0 2px 0;
+	padding: 4px 0 0 8px;
+}
+
+#divConteudoCode{
+	
+	
+}
+
+
+.Fonte01 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color:#000000;
+}
+.Fonte01 a{
+	color:#000000;
+}
+.Fonte02 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color:#666666;
+}
+.Fonte03 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color:#333333;
+}
+.Fonte04 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color:#666666;
+}
+.FonteErro {
+	border: 1px solid #cccccc;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color:#000000;
+	background-color: yellow;
+	padding: 6px;
+}
+
+.FonteTituloDestaque{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: red;
+}
+
+.FonteValueDestaque{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: red;
+}
+
+.FonteNavegFocus{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: red;
+}
+
+.FonteNaveg{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+}
+
+.FonteBrokerTabelaDePara {
+	background-color: #434343;
+	color: white;
+}
+
+.BrokerTabelaDePara {
+	background-color: blue;
+	color: white;
+}
+
+h1{
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	FONT-SIZE: 17px;
+	COLOR: #990000;
+	TEXT-TRANSFORM: uppercase;
+	margin-left:15px;
+	margin-top:15px;
+	margin-bottom:10px;
+}
+
+h2{
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	FONT-SIZE: 13px;
+	COLOR: #333333;
+	margin-left:15px;
+	margin-top:5px;
+	margin-bottom:10px;
+}
+
+/*----- Menu--------*/
+#DivMenu {
+	width:80px;
+	height:26px;
+	float:right;
+	border-bottom: solid 1px #4d4d4d;
+	border-top: solid 1px #4d4d4d;
+	background-color:#D61920;
+}
+
+.FontMenu01 {
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	FONT-SIZE: 9px;
+	text-transform:uppercase;
+	color: #FFFFFF;
+	font-weight: bold;
+	
+}
+.FontMenu02 {
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	FONT-SIZE: 10px;
+	color: #FFFFFF;
+	font-weight: bold;
+	
+}
+
+.divMenu {
+	width:899px;
+	height:26px;
+	padding-top: 2px;
+	background-image:url(../images/bg_botao.jpg);
+	background-repeat:repeat-x;
+}
+
+
+.menu li{
+	display: inline;
+	padding: 1px 23px 5px 7px;
+	margin-left: 10px;
+	position: relative;
+}
+
+.menu li:hover{
+
+	/*background: #CCCCCC;*/
+}
+
+.subMenu{
+	display: none;
+	position: absolute;
+	left: -25px;
+	top: 25px;
+	padding: 0px 7px 5px 7px;
+	white-space: nowrap;
+
+}
+
+.subMenu li{
+	min-width: 180px;
+	display: list-item;
+	padding: 0px 7px 5px 7px;
+	list-style: none;
+	background: #484848;
+	border: solid 1px #6e6e6e;
+}
+
+.subMenu li:hover{
+	padding: 0px 7px 5px 7px;
+	background: #666666;
+}
+
+.subMenu li a{
+	position: relative;
+}
+
+/*-----Fim menu----*/
+.input{
+	border: 1px solid #cdcdcd;
+	BACKGROUND: url(../images/fundoCampos.gif) repeat-x bottom;
+}
+.button{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color:#ffffff;
+	padding-left:8px;
+	padding-right:8px;
+	border: 1px solid #cdcdcd;
+	background-color: #D61920;
+    cursor: pointer ; 
+}
+
+.red-cell {
+	background-color: #FF6F78; /*#ec5b5f;*/
+}
+
+.yellow-cell {
+	background-color: yellow;
+}
+
+.green-cell {
+	background-color: #EFFFEF; /*#b5e1b5;*/	
+}
+
+.lime-cell {
+	background-color: #00FF40;	
+}
+
+.redstrong-cell {
+	background-color: #FF0F19;	
+}
+
+.orange-cell {
+	background-color: #FFE25F;	
+}
+
+.noborder{
+	border: 0;
+}
+
+#menu_msg_usuario {
+    font-family: arial,verdana,tahoma;
+    font-size: 11px;
+    font-weight: bold;
+    top: 0px; ;
+	width: 50%;
+	height:25px;
+	float:left;
+	
+}
+
+.bordaBox {bbackground: ttransparent; width:100%;}
+.bordaBox .b1, .bordaBox .b2, .bordaBox .b3, .bordaBox .b4, .bordaBox .b1b, .bordaBox .b2b, .bordaBox .b3b, .bordaBox .b4b {display:block; overflow:hidden; font-size:1px;}
+.bordaBox .b1, .bordaBox .b2, .bordaBox .b3, .bordaBox .b1b, .bordaBox .b2b, .bordaBox .b3b {height:1px;}
+.bordaBox .b2, .bordaBox .b3, .bordaBox .b4 {background:#F9FC95; border-left:1px solid #999; border-right:1px solid #999;}
+.bordaBox .b1 {margin:0 5px; background:#999;}
+.bordaBox .b2 {margin:0 3px; border-width:0 2px;}
+.bordaBox .b3 {margin:0 2px;}
+.bordaBox .b4 {height:2px; margin:0 1px;}
+.bordaBox .conteudo {padding:5px;display:block; background:#F9FC95; border-left:1px solid #999; border-right:1px solid #999;font-family: arial,verdana,tahoma;font-size: 11px;}
+

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" 
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans  
+                   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+                   http://www.springframework.org/schema/context 
+                   http://www.springframework.org/schema/context/spring-context-3.0.xsd
+                   http://www.springframework.org/schema/aop 
+                   http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+                   http://www.springframework.org/schema/tx 
+                   http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+	
+	
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="classpath:conf.properties" />
+	</bean>
+	
+	
+	<!--
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean"
+		scope="prototype">
+		<property name="jndiName" value="/jdbc/visto" />
+		<property name="resourceRef" value="true" />
+	</bean>
+	-->
+
+	<!--
+		Transaction manager for a single Hibernate SessionFactory (alternative
+		to JTA)
+	-->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="dataSource"
+		  class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		
+		<property name="driverClassName" value="${hibernate.connection.driver_class}" /> 
+		<property name="url" value="${hibernate.connection.url}" /> 
+		<property name="username" value="${hibernate.connection.username}" />
+		<property name="password" value="${hibernate.connection.password}" /> 
+		
+	</bean>
+		
+	<!-- Session Factory do Hibernate -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="commons-hibernate.cfg.xml" />
+		<property name="hibernateProperties">
+			<value>				
+				hibernate.dialect=${hibernate.connection.dialect}
+				hibernate.query.substitutions=true 'Y', false 'N'
+				hibernate.cache.use_second_level_cache=false
+				hibernate.connection.lc_ctype=ISO8859_1
+				hibernate.show.sql = false
+				hibernate.format.sql = false
+				hibernate.cache.provider_class=org.hibernate.cache.EhCacheProvider
+				hibernate.hbm2ddl.auto=create
+			</value>
+		</property>
+	</bean>
+		
+	<bean id="daoTxTemplate" abstract="true"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="transactionAttributes">
+			<props>
+				<prop key="create*">
+					PROPAGATION_REQUIRED,ISOLATION_READ_COMMITTED
+				</prop>
+				<prop key="salvar*">
+					PROPAGATION_REQUIRED,ISOLATION_READ_COMMITTED
+				</prop>
+				<prop key="save*">
+					PROPAGATION_REQUIRED,ISOLATION_READ_COMMITTED
+				</prop>
+				<prop key="delete*">
+					PROPAGATION_REQUIRED,ISOLATION_READ_COMMITTED
+				</prop>
+				<prop key="remove*">
+					PROPAGATION_REQUIRED,ISOLATION_READ_COMMITTED
+				</prop>
+				<prop key="find*">
+					PROPAGATION_SUPPORTS,readOnly
+				</prop>
+				<prop key="get*">
+					PROPAGATION_SUPPORTS,readOnly
+				</prop>
+				<prop key="obtem*">
+					PROPAGATION_SUPPORTS,readOnly
+				</prop>
+				<prop key="exists*">
+					PROPAGATION_SUPPORTS,readOnly
+				</prop>
+			</props>
+		</property>
+	</bean>
+		
+	<!--
+	===================================================================
+	-->
+	<!--
+		AOP: Configuration and Aspects
+	-->
+	<!--
+		===================================================================
+	-->
+	<aop:config>
+		<aop:advisor id="managerTx" advice-ref="txAdvice"
+			pointcut="execution(* *..service.*Service.*(..))" order="0" />
+	</aop:config>
+	
+	<!-- Enable @Transactional support-->
+	<tx:annotation-driven />
+
+	<!-- Enable @AspectJ support -->
+	<aop:aspectj-autoproxy />
+	
+	
+	
+	
+	
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="get*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="find*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="obtem*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="*" propagation="REQUIRED"
+				rollback-for="br.com.arizona.visto.arquiteturaModelo.exception.BusinessException,br.com.arizona.fat.exception.BusinessException,java.lang.RuntimeException" />
+		</tx:attributes>
+	</tx:advice>
+	
+	
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="MessageResources" />
+	</bean>
+	
+</beans>

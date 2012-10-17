@@ -1,0 +1,20 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<mapping class="br.com.wjaa.commons.model.entity.Usuario" />
+		<mapping class="br.com.wjaa.commons.model.entity.Cliente" />
+		<mapping class="br.com.wjaa.commons.model.entity.Perfume" />
+		<mapping class="br.com.wjaa.commons.model.entity.Fornecedor" />
+		<mapping class="br.com.wjaa.commons.model.entity.Lote" />
+		<mapping class="br.com.wjaa.commons.model.entity.LoteProduto" />
+		<mapping class="br.com.wjaa.commons.model.entity.EstoqueAjusteSaida" />
+		<mapping class="br.com.wjaa.commons.model.entity.EstoqueEntrada" />
+		<mapping class="br.com.wjaa.commons.model.entity.Vendedor" />
+		<mapping class="br.com.wjaa.commons.model.entity.Venda" />
+		<mapping class="br.com.wjaa.commons.model.entity.VendaItem" />
+		<mapping class="br.com.wjaa.commons.model.entity.VendaPrazo" />
+		<mapping class="br.com.wjaa.commons.model.entity.VendaPagamento" />
+	</session-factory>
+</hibernate-configuration>

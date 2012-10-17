@@ -1,0 +1,1 @@
+<div id="DivRodape">&copy; 2010  -  Todos os direitos reservados  -  Versão: 1.0 </div>
