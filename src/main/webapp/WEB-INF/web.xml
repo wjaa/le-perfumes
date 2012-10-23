@@ -1,30 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one or more
-    contributor license agreements.  See the NOTICE file distributed with
-    this work for additional information regarding copyright ownership.
-    The ASF licenses this file to You under the Apache License, Version 2.0
-    (the "License"); you may not use this file except in compliance with
-    the License.  You may obtain a copy of the License at
-   
-         http://www.apache.org/licenses/LICENSE-2.0
-   
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<!-- 
-  <!DOCTYPE web-app PUBLIC
-	"-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
-	"http://java.sun.com/dtd/web-app_2_3.dtd">
- -->
 <web-app xmlns="http://java.sun.com/xml/ns/j2ee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-app_2_5.xsd"
 	version="2.5">
-  <display-name>Struts Blank Application</display-name>
+  <display-name>le-perfumes</display-name>
   
   <!-- Standard Action Servlet Configuration -->
   <servlet>
@@ -67,6 +46,7 @@
   </session-config>
 
  <!-- Struts Tag Library Descriptors -->
+ <jsp-config>
 	<taglib>
 		<taglib-uri>/tags/struts-bean.tld</taglib-uri>
 		<taglib-location>/WEB-INF/struts-bean.tld</taglib-location>
@@ -91,6 +71,7 @@
 		<taglib-uri>http://displaytag.sf.net</taglib-uri>
 		<taglib-location>/WEB-INF/displaytag.tld</taglib-location>
 </taglib>
+</jsp-config>
  
 	<!-- Configuracao dos configs locations do spring -->
 	<context-param>
@@ -106,7 +87,7 @@
 		</description>
 		<display-name>FiltroUsuario</display-name>
 		<filter-name>FiltroUsuario</filter-name>
-		<filter-class>br.com.cevada.controller.filter.FiltroUsuario</filter-class>
+		<filter-class>br.com.wjaa.controller.filter.FiltroUsuario</filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>FiltroUsuario</filter-name>

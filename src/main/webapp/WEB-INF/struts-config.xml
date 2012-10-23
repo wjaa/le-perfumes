@@ -21,11 +21,11 @@
             
         </form-bean>
         
-        <form-bean name="fornecedorForm" type="br.com.cevada.controller.impl.FornecedorForm"></form-bean>
-        <form-bean name="loteForm" type="br.com.cevada.controller.impl.LoteForm"></form-bean>
-        <form-bean name="vendedorForm" type="br.com.cevada.controller.impl.VendedorForm"></form-bean>
-        <form-bean name="estoqueEntradaForm" type="br.com.cevada.controller.impl.EstoqueEntradaForm"></form-bean>
-        <form-bean name="vendaForm" type="br.com.cevada.controller.impl.VendaForm"></form-bean>
+        <form-bean name="fornecedorForm" type="br.com.wjaa.controller.impl.FornecedorForm"></form-bean>
+        <form-bean name="loteForm" type="br.com.wjaa.controller.impl.LoteForm"></form-bean>
+        <form-bean name="vendedorForm" type="br.com.wjaa.controller.impl.VendedorForm"></form-bean>
+        <form-bean name="estoqueEntradaForm" type="br.com.wjaa.controller.impl.EstoqueEntradaForm"></form-bean>
+        <form-bean name="vendaForm" type="br.com.wjaa.controller.impl.VendaForm"></form-bean>
 
     </form-beans>
 
@@ -223,7 +223,7 @@
 	</action>	
 	
 	<action path="/sair"
-			type="br.com.cevada.controller.impl.SairAction"	
+			type="br.com.wjaa.controller.impl.SairAction"	
 			scope="request" >
 		<forward name="falha" path="/falha.jsp"></forward>	
 	</action>	

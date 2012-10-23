@@ -5,43 +5,43 @@
 	default-lazy-init="true">
 	
 	
-	<bean name="/login" class="br.com.cevada.controller.impl.LoginAction"
+	<bean name="/login" class="br.com.wjaa.controller.impl.LoginAction"
 		scope="prototype" lazy-init="false">
 	</bean>
 	
-	<bean name="/loginUsuario" class="br.com.cevada.controller.impl.LoginAction"
+	<bean name="/loginUsuario" class="br.com.wjaa.controller.impl.LoginAction"
 			scope="prototype" lazy-init="false">
 	</bean>
 	
-	<bean name="/manterUsuario" class="br.com.cevada.controller.impl.UsuarioAction"
+	<bean name="/manterUsuario" class="br.com.wjaa.controller.impl.UsuarioAction"
 			scope="prototype" lazy-init="false">
 	</bean>
 	
-	<bean name="/manterCliente" class="br.com.cevada.controller.impl.ClienteAction"
+	<bean name="/manterCliente" class="br.com.wjaa.controller.impl.ClienteAction"
 			scope="prototype" lazy-init="false">
 	</bean>
 	
-	<bean name="/manterPerfume" class="br.com.cevada.controller.impl.PerfumeAction"
+	<bean name="/manterPerfume" class="br.com.wjaa.controller.impl.PerfumeAction"
 			scope="prototype" lazy-init="false">
 	</bean>
 	
-	<bean name="/manterFornecedor" class="br.com.cevada.controller.impl.FornecedorAction"
+	<bean name="/manterFornecedor" class="br.com.wjaa.controller.impl.FornecedorAction"
 			scope="prototype" lazy-init="false">
 	</bean>
 	
-	<bean name="/manterLote" class="br.com.cevada.controller.impl.LoteAction"
+	<bean name="/manterLote" class="br.com.wjaa.controller.impl.LoteAction"
 			scope="prototype" lazy-init="false">
 	</bean>
 	
-	<bean name="/manterVendedor" class="br.com.cevada.controller.impl.VendedorAction"
+	<bean name="/manterVendedor" class="br.com.wjaa.controller.impl.VendedorAction"
 			scope="prototype" lazy-init="false">
 	</bean>
 	
-	<bean name="/manterEstoque" class="br.com.cevada.controller.impl.EstoqueAction"
+	<bean name="/manterEstoque" class="br.com.wjaa.controller.impl.EstoqueAction"
 			scope="prototype" lazy-init="false">
 	</bean>
 	
-	<bean name="/manterVenda" class="br.com.cevada.controller.impl.VendaAction"
+	<bean name="/manterVenda" class="br.com.wjaa.controller.impl.VendaAction"
 			scope="prototype" lazy-init="false">
 	</bean>
 	
