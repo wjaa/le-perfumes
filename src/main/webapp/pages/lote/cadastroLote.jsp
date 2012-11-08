@@ -204,6 +204,11 @@
 			return false;
 		}
 
+		if ( $("#perfumes tr").size() == 0 ){
+			jAlertte('Você não adicionou nenhum perfume ao lote!', 'ERRO');
+			return false;
+		}		
+		
 		if (this.validaPrecosProdutos()){
 			jAlertte('Preço ou quantidade não foi preenchido!', 'ERRO');
 			return false;	
