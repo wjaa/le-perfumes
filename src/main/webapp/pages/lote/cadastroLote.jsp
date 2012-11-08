@@ -104,7 +104,7 @@
 								<table width="100%" class="displaytag">
 									<thead>
 										<tr >
-											<th width="45%">Nome Perfume</th>
+											<th width="45%">Perfume</th>
 											<th width="25%">Preço compra</th>
 											<th width="25%">Quantidade</th>
 											<th width="5%">Ação</th>
