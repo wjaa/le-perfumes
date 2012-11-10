@@ -124,7 +124,7 @@
 							</tr>
 							<tr height="10px"><td>&nbsp;</td></tr>
 							<tr>
-								<td colspan="2" align="center"><input type="button" value="Logar" id="logar" name="logar" onclick="validaResposta();"  class="button"> </td>
+								<td colspan="2" align="center"><input type="submit" value="Logar" id="logar" name="logar" onclick="validaResposta();"  class="button"> </td>
 							</tr>
 						</table>	  
 				  

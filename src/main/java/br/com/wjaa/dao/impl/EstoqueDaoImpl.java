@@ -26,15 +26,15 @@ public class EstoqueDaoImpl extends GenericDaoImpl<EstoqueEntrada, Integer>
 		sql.append(" select e.id_perfume, ");  
 		sql.append("   concat(p.NOME , ' ' , p.TAMANHO , 'ml')as nomePerfume, e.id_vendedor, v.nome as nomeVendedor, ");  
 		sql.append(" (IFNULL(sum(e.qtde),0) -  ");
-		sql.append(" IFNULL((select sum(esaida.qtde) from estoque_ajuste_saida esaida ");
+		sql.append(" IFNULL((select sum(esaida.qtde) from ESTOQUE_AJUSTE_SAIDA esaida ");
 		sql.append(" where esaida.id_perfume = e.id_perfume and esaida.id_vendedor = e.id_vendedor),0) - "); 
-		sql.append(" IFNULL((select sum(vi.qtde) from venda_item vi  ");
-		sql.append(" join venda vixv on (vixv.id = vi.id_venda ) ");
+		sql.append(" IFNULL((select sum(vi.qtde) from VENDA_ITEM vi  ");
+		sql.append(" join VENDA vixv on (vixv.id = vi.id_venda ) ");
 		sql.append(" where vi.id_perfume = e.id_perfume and vixv.id_vendedor = v.id),0)) as qtdeTotal ");
-		sql.append(" from estoque_entrada e  ");
-		sql.append(" join vendedor v on (v.id = e.id_vendedor ) "); 
-		sql.append(" join perfume p on (p.id = e.id_perfume )  ");
-		sql.append(" left join estoque_ajuste_saida esaida on (esaida.id_lote = e.id_lote and ");  
+		sql.append(" from ESTOQUE_ENTRADA e  ");
+		sql.append(" join VENDEDOR v on (v.id = e.id_vendedor ) "); 
+		sql.append(" join PERFUME p on (p.id = e.id_perfume )  ");
+		sql.append(" left join ESTOQUE_AJUSTE_SAIDA esaida on (esaida.id_lote = e.id_lote and ");  
 		sql.append(" esaida.id_perfume = e.id_perfume and  ");
 		sql.append(" esaida.id_vendedor = e.id_vendedor )  ");
 		sql.append(" group by 1,3  ");
@@ -51,11 +51,11 @@ public class EstoqueDaoImpl extends GenericDaoImpl<EstoqueEntrada, Integer>
 		sql.append(" select distinct l.id as idLote, l.data_compra, lp.quantidade, lp.id_perfume, "); 
 		sql.append(" concat(p.NOME , ' ' , p.TAMANHO , 'ml')as nomePerfume, e.id_vendedor, v.nome as nomeVendedor, "); 
 		sql.append(" IFNULL(e.qtde,0) as qtdeTotal ");  
-		sql.append(" from lote l ");
-		sql.append(" join lotexproduto lp on (lp.id_lote = l.id) ");
-		sql.append(" join perfume p on (p.id = lp.id_perfume ) ");
-		sql.append(" left join estoque_entrada e on (e.id_lote = l.id and lp.id_perfume = e.id_perfume) ");
-		sql.append(" left join vendedor v on (v.id = e.id_vendedor ) ");
+		sql.append(" from LOTE l ");
+		sql.append(" join LOTEXPRODUTO lp on (lp.id_lote = l.id) ");
+		sql.append(" join PERFUME p on (p.id = lp.id_perfume ) ");
+		sql.append(" left join ESTOQUE_ENTRADA e on (e.id_lote = l.id and lp.id_perfume = e.id_perfume) ");
+		sql.append(" left join VENDEDOR v on (v.id = e.id_vendedor ) ");
 		sql.append(" where l.id = :idLote ");
 		sql.append(" order by 1, 2 desc,5 ");
 		
@@ -73,15 +73,15 @@ public class EstoqueDaoImpl extends GenericDaoImpl<EstoqueEntrada, Integer>
 		sql.append(" select distinct l.id as idLote, l.data_compra, lp.quantidade, lp.id_perfume, "); 
 		sql.append(" concat(p.NOME , ' ' , p.TAMANHO , 'ml')as nomePerfume, e.id_vendedor, v.nome as nomeVendedor, "); 
 		sql.append(" IFNULL(e.qtde,0) as qtdeVendedor ");  
-		sql.append(" from lote l ");
-		sql.append(" join lotexproduto lp on (lp.id_lote = l.id) ");
-		sql.append(" join perfume p on (p.id = lp.id_perfume ) ");
-		sql.append(" left join estoque_entrada e on (e.id_lote = l.id and lp.id_perfume = e.id_perfume) ");
-		sql.append(" left join vendedor v on (v.id = e.id_vendedor ) ");
-		sql.append(" left join estoque_ajuste_saida esaida on (esaida.id_lote = l.id and "); 
+		sql.append(" from LOTE l ");
+		sql.append(" join LOTEXPRODUTO lp on (lp.id_lote = l.id) ");
+		sql.append(" join PERFUME p on (p.id = lp.id_perfume ) ");
+		sql.append(" left join ESTOQUE_ENTRADA e on (e.id_lote = l.id and lp.id_perfume = e.id_perfume) ");
+		sql.append(" left join VENDEDOR v on (v.id = e.id_vendedor ) ");
+		sql.append(" left join ESTOQUE_AJUSTE_SAIDA esaida on (esaida.id_lote = l.id and "); 
 		sql.append(" esaida.id_perfume = e.id_perfume and  ");
 		sql.append(" esaida.id_vendedor = e.id_vendedor ) ");
-		sql.append(" left join venda_item vi on (vi.id_perfume = e.id_perfume ) ");
+		sql.append(" left join VENDA_ITEM vi on (vi.id_perfume = e.id_perfume ) ");
 		sql.append(" where e.id_lote = :idLote and e.id_perfume = :idPerfume");
 		sql.append(" order by 1, 2 desc,5 ");
 		
@@ -123,8 +123,8 @@ public class EstoqueDaoImpl extends GenericDaoImpl<EstoqueEntrada, Integer>
 	@Override
 	public List<Object[]> listAjusteEstoquePorLoteAndPerfume(Integer idLote,
 			Integer idPerfume) {
-		String sql  = " select v.nome, s.id_vendedor, s.qtde, s.obs from estoque_ajuste_saida s " +
-					  " join vendedor v ON s.id_vendedor = v.id " +
+		String sql  = " select v.nome, s.id_vendedor, s.qtde, s.obs from ESTOQUE_AJUSTE_SAIDA s " +
+					  " join VENDEDOR v ON s.id_vendedor = v.id " +
 					  " where s.id_perfume = :idPerfume and s.id_lote = :idLote ";
 		
 		return this.getSession().createSQLQuery(sql).
@@ -144,12 +144,12 @@ public class EstoqueDaoImpl extends GenericDaoImpl<EstoqueEntrada, Integer>
 		sql.append(" select p.id, ");  
 		sql.append(" concat(p.NOME , ' ' , p.TAMANHO , 'ml')as nomePerfume, "); 
 		sql.append(" (IFNULL(sum(e.qtde),0) -  ");
-		sql.append(" IFNULL((select sum(esaida.qtde) from estoque_ajuste_saida esaida "); 
+		sql.append(" IFNULL((select sum(esaida.qtde) from ESTOQUE_AJUSTE_SAIDA esaida "); 
 		sql.append(" where esaida.id_perfume = e.id_perfume),0)- ");
-		sql.append(" IFNULL((select sum(vi.qtde) from venda_item vi  ");
+		sql.append(" IFNULL((select sum(vi.qtde) from VENDA_ITEM vi  ");
 		sql.append(" where vi.id_perfume = e.id_perfume),0)) as qtdeTotal "); 
-		sql.append(" from  perfume p "); 
-		sql.append(" left join estoque_entrada e on (e.id_perfume = p.id) ");
+		sql.append(" from  PERFUME p "); 
+		sql.append(" left join ESTOQUE_ENTRADA e on (e.id_perfume = p.id) ");
 		sql.append(" group by 1 ");
 		sql.append(" order by 2 "); 
 		
@@ -165,14 +165,14 @@ public class EstoqueDaoImpl extends GenericDaoImpl<EstoqueEntrada, Integer>
 		sql.append(" select e.id_perfume, ");  
 		sql.append("   concat(p.NOME , ' ' , p.TAMANHO , 'ml')as nomePerfume, e.id_vendedor, v.nome as nomeVendedor, ");  
 		sql.append(" (IFNULL(sum(e.qtde),0) -  ");
-		sql.append(" IFNULL((select sum(esaida.qtde) from estoque_ajuste_saida esaida ");
+		sql.append(" IFNULL((select sum(esaida.qtde) from ESTOQUE_AJUSTE_SAIDA esaida ");
 		sql.append(" where esaida.id_perfume = e.id_perfume and esaida.id_vendedor = e.id_vendedor),0) - "); 
-		sql.append(" IFNULL((select sum(vi.qtde) from venda_item vi  ");
-		sql.append(" join venda vixv on (vixv.id = vi.id_venda ) ");
+		sql.append(" IFNULL((select sum(vi.qtde) from VENDA_ITEM vi  ");
+		sql.append(" join VENDA vixv on (vixv.id = vi.id_venda ) ");
 		sql.append(" where vi.id_perfume = e.id_perfume and vixv.id_vendedor = v.id and vixv.id != :idVenda ),0)) as qtdeTotal ");
-		sql.append(" from estoque_entrada e  ");
-		sql.append(" join vendedor v on (v.id = e.id_vendedor ) "); 
-		sql.append(" join perfume p on (p.id = e.id_perfume )  ");
+		sql.append(" from ESTOQUE_ENTRADA e  ");
+		sql.append(" join VENDEDOR v on (v.id = e.id_vendedor ) "); 
+		sql.append(" join PERFUME p on (p.id = e.id_perfume )  ");
 		sql.append(" left join estoque_ajuste_saida esaida on (esaida.id_lote = e.id_lote and ");  
 		sql.append(" esaida.id_perfume = e.id_perfume and  ");
 		sql.append(" esaida.id_vendedor = e.id_vendedor )  ");
