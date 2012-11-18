@@ -26,7 +26,7 @@
 	<div id="DivConteudo">
 
 	<div id="divConteudo">
-		<div id="divTextoConteudo">Busca de Clientes </div>
+		<div id="divTextoConteudo">&nbsp;&nbsp;Busca de Clientes </div>
 		<br>
 		
 		<form action="manterCliente.do?dispatch=buscarCliente" method="post">

@@ -46,8 +46,8 @@
 
 <c:if test="${por == 2}">
 	
-	<center>
-	<div> <!-- Div display tag -->
+	
+	<div class="displayTag"> <!-- Div display tag -->
 	
 	
 
@@ -65,8 +65,7 @@
 
 <c:if test="${por == 3}">
 	
-	<center>
-	<div> <!-- Div display tag -->
+	<div class="displayTag"> <!-- Div display tag -->
 	
 	
 	
@@ -83,7 +82,6 @@
 
 </div> <!-- FIM Div display tag -->			
 <br></br>
-</center>
 	
 	</div>
 	</div>

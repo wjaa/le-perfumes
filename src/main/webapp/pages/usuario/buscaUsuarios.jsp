@@ -27,34 +27,42 @@
 	<div id="divConteudo">
 		<div id="divTextoConteudo">Busca de Usuários do Sistema</div>
 		<br>
+		<br>
 		
 <form action="manterUsuario.do?dispatch=buscarUsuario" method="post">
-			
-			<td >&nbsp; Nome:&nbsp; </td>
-			<td>&nbsp; <input type="text" id="nome" name="nome" class="input" size="30"></td>
-			<td>&nbsp; <input type="submit" value="Pesquisar Usuário"  class="button" > </td> 
+			<table>
+				<tr>
+					<td >&nbsp; Nome:&nbsp; </td>
+					<td>&nbsp; <input type="text" id="nome" name="nome" class="input" size="30"></td>
+					<td>&nbsp; <input type="submit" value="Pesquisar Usuário"  class="button" > </td>
+				</tr>	
+			</table> 
 			
 	
 </form>	
 <br>
 
-<center>
-<div> <!-- Div display tag -->
+
+<div class="displayTag"> <!-- Div display tag -->
 
 <display:table id="listUser" name="${modeloBusca.consultaUsuarioVo}" sort="list" pagesize="5" export="false"  class="displaytag"
 requestURI="manterUsuario.do?dispatch=buscarUsuario">
 
-	<display:column property="idUsuario" title="Id Usuário" sortable="true"  />
+	<display:column property="idUsuario" title="#" sortable="true"  />
 	<display:column property="nomeFull" title="Nome Usuário" sortable="true"  />
 	<display:column property="nome" title="Login Usuário" sortable="true"  />
-	<display:column title="Ação"><a href="manterUsuario.do?dispatch=editar&idUsuario=${listUser.idUsuario}">Alterar</a>&nbsp;&nbsp;<a href="#" onclick="removerUsuario(${listUser.idUsuario});">Remover</a></display:column>
+	<display:column title="Ação">
+		<input type="button" value="Alterar" onclick="window.location = manterUsuario.do?dispatch=editar&idUsuario=${listUser.idUsuario}" class="button" >
+		&nbsp
+		<input type="button" onclick="removerUsuario(${listUser.idUsuario});" value="Remover"  class="button" >
+	</display:column>
 
 </display:table>
 
 
 </div> <!-- FIM Div display tag -->			
 
-</center>
+
 	
 	</div>
 	</div>

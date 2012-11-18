@@ -3,11 +3,11 @@ TABLE.displaytag {
  	}
  	
  	TABLE.displaytag TH {
- 	   background: #f0f0f0;
- 	   font-size: 11px;
+ 	   background: #6B6B6B;
+ 	   font-size: 15px;
  	   color: #333333;
 	   font-weight: bold;
- 	   font-family: Verdana, Arial, Helvetica, sans-serif;
+ 	   font-family: Verdana;
  	   text-align: center;
  	   padding: 3px;
  	   border-bottom: 1px solid #ccc;
@@ -85,9 +85,10 @@ TABLE.displaytag {
  	        padding: 2px 4px 2px 4px;
  	        margin-top: 0px;
  	        margin-bottom: 0px;
- 	        display:block;
+ 	        display:table;
  	        border-bottom: none;
  	        text-align: center;
+ 	        background-color: #E7D7FA;
  	}
  	
  	span.pagelinks {
@@ -98,10 +99,11 @@ TABLE.displaytag {
  	        background-color: #fbfbfb;
  	        border: 1px solid #f0f0f0;
  	        padding: 2px 4px 2px 4px;
- 	        display:block;
+ 	        display:table;
  	        border-top: none;
  	        margin-bottom: 5px;
  	        text-align: center;
+ 	        background-color: #E7D7FA;
  	}
  	
  	span.pagelinks a {

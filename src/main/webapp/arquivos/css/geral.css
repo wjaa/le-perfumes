@@ -1,5 +1,11 @@
+
+
 /* ----- GERAL ------ */
-*{MARGIN:1px; PADDING:1px;}
+*{PADDING:1px;}
+
+body{
+	background-color:#E7D7FA; 
+}
 
 a{TEXT-DECORATION: none;}
 
@@ -20,12 +26,12 @@ a.cursor{cursor: pointer;}
 
 #DivGeralTopo {
 	width: 240px;
-	height:100%;
 	float: left;
 	border-width: 1px ;
 	border-style: solid;
 	border-color:#ADADAD;
-	margin-left:15px;
+	margin-left:10px;
+	position: absolute;
 }
 #DivLogo {
 	width: 80px;
@@ -83,17 +89,17 @@ a.cursor{cursor: pointer;}
 	FONT-FAMILY: arial,verdana,tahoma;
 	FONT-SIZE: 11px;
 	COLOR: #333333;
-	width: 95%;
 	height: 13px;
-	margin: 15px 0 2px 0;
-	padding: 15px 0 0 8px;
+	margin: 1px 0 2px 0;
+	padding: 1px 0 0 8px;
 	text-decoration: none;
+	text-indent:10px;
+	margin-left: 260px;
 }
 
 #DivConteudo{	
-	width: 100%;
-	margin-left: 5px;
-	
+	margin-left: 260px;
+	float: left;
 }
 
 #divTextoConteudo{
@@ -102,12 +108,12 @@ a.cursor{cursor: pointer;}
 	border-width: 0px ;
 	border-style: solid;
 	border-color:#ADADAD;
-	
+	text-indent:10px;
 	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
 	FONT-SIZE: 0.9em;
 	COLOR: #333333;
-	margin: 2px 0 2px 0;
-	padding: 4px 0 0 8px;
+	margin: 5px 0 2px 0;
+	padding: 5px 0 0 8px;
 }
 
 .Fonte01 {
@@ -278,8 +284,15 @@ h2{
 
 /*-----Fim menu----*/
 .input{
-	border: 1px solid #cdcdcd;
-	BACKGROUND: url(../images/fundoCampos.gif) repeat-x bottom;
+	border: 1px solid;
+}
+.input:hover{
+	border: 2px solid;
+	background-color:#F3F797
+}
+.input:FOCUS{
+	border: 2px solid;
+	background-color:#F3F797
 }
 .button{
 	font-family: Arial, Helvetica, sans-serif;
@@ -435,3 +448,6 @@ h2{
 	border-bottom: none;
 }
 
+.displayTag{
+	padding-left: 15px;
+}
