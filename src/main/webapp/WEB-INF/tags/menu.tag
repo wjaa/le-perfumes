@@ -14,7 +14,7 @@
 		
 		<!-- Administracao -->
 		<ul id="accordion">
-			<li>
+			<li class="popular">
 				<a href="#" class="item popular">Administração Sistema</a> <!-- titulo menu 1 -->
 				<ul>
 					<li><a href="cadastroUsuario.do">Cadastro Usuários</a> </li>
@@ -29,31 +29,31 @@
 					<li><a href="buscaVendedor.do">Buscar Vendedor</a> </li>
 				</ul>
 			</li>
-			<li>
+			<li class="popular">
 				<a href="#" class="item popular">Lote</a>
 				<ul>
 					<li><a href="manterLote.do?dispatch=createEdit">Criar Lote</a> </li>
 					<li><a href="manterLote.do?dispatch=search">Buscar Lote</a> </li>
 				</ul>
 			</li>
-			<li>
+			<li class="popular">
 				<a href="#" class="item popular">Estoque</a>
 				<ul>
 					<li><a href="controlarEstoque.do">Controlar Estoque</a> </li>
 				</ul>
 			</li>
-			<li>
+			<li class="popular">
 				<a href="#" class="item popular">Venda</a>
 				<ul>
 					<li><a href="manterVenda.do?dispatch=createEdit">Criar Venda</a> </li>
 					<li><a href="manterVenda.do?dispatch=search">Buscar Venda</a> </li>
 				</ul>
 			</li>
-			<li>
+			<li class="popular">
 				<a href="relatorio.jsp" class="item popular">Relatórios</a>
 			</li>
-			<li>
-				<a href="sair.action">Sair</a>
+			<li class="popular">
+				<a style="color:white;" class="sair" href="sair.action">Sair</a>
 			</li>
 		</ul>	
 		

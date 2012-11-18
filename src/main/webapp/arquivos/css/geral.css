@@ -1,5 +1,5 @@
 /* ----- GERAL ------ */
-*{MARGIN:0px; PADDING:0px;}
+*{MARGIN:1px; PADDING:1px;}
 
 a{TEXT-DECORATION: none;}
 
@@ -8,10 +8,6 @@ a:hover{TEXT-DECORATION:underline;}
 a:link{text-decoration:none;}
 
 a.cursor{cursor: pointer;}
-
-body{
-	BACKGROUND: #FFFFFF url(../images/bg_fundo.gif) repeat-x;
-}
 
 .Modal {
 	font-family: Arial, Helvetica, sans-serif;
@@ -23,7 +19,7 @@ body{
 }
 
 #DivGeralTopo {
-	width: 220px;
+	width: 240px;
 	height:100%;
 	float: left;
 	border-width: 1px ;
@@ -113,12 +109,6 @@ body{
 	margin: 2px 0 2px 0;
 	padding: 4px 0 0 8px;
 }
-
-#divConteudoCode{
-	
-	
-}
-
 
 .Fonte01 {
 	font-family: Arial, Helvetica, sans-serif;
@@ -293,13 +283,17 @@ h2{
 }
 .button{
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
+	font-size: 16px;
 	color:#ffffff;
 	padding-left:8px;
 	padding-right:8px;
 	border: 1px solid #cdcdcd;
 	background-color: #D61920;
     cursor: pointer ; 
+}
+
+.button:hover{
+	color:#FF9900;
 }
 
 .red-cell {
@@ -363,6 +357,8 @@ h2{
 	
 #accordion li {
 	width:200px;
+	margin: 5px;
+	padding: 1px;
 }
 
 #accordion li a {
@@ -373,9 +369,10 @@ h2{
 }
 
 /* Using CSS Sprite for menu item */
-#accordion li a.popular {
+#accordion li.popular {
 	border: solid 1px black;
-	background-color:#D4D4D4;
+	background-color:#D61920;
+	box-shadow: #525051 0.5em 0.5em 0.3em;
 		
 }
 
@@ -384,11 +381,23 @@ h2{
 
 /* Second Level UL List*/
 #accordion ul {
-	background-color: #D4D4D4;
 	width:200px;
 	margin:0;
 	padding:0;
 	display:none;	
+	list-style-type:none;
+}
+
+#accordion a.popular{
+	color: white;
+}
+#accordion a.popular:hover {
+	text-decoration:none; 
+	color:#FF9900;
+}
+#accordion a.sair:hover {
+	text-decoration:none; 
+	color:#FF9900;
 }
 		
 #accordion ul li {
@@ -409,12 +418,12 @@ h2{
 #accordion ul li a:link {
 	text-decoration:none; 
 	font: 12pt 'Verdana'; 
-	color:#336699
+	color:white;
 }
 #accordion ul li a:visited {
 	text-decoration:none; 
 	font: 12pt 'Verdana';
-	color:#336699
+	color:white;
 }
 #accordion ul li a:hover {
 	text-decoration:none; 
@@ -424,4 +433,5 @@ h2{
 /* remove border bottom of the last item */
 #accordion ul li a.last {
 	border-bottom: none;
-}		
+}
+
