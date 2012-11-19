@@ -184,12 +184,12 @@
 <!--  	<h1>Sistema de Controle "</h1>-->
 
 	<div id="divConteudo">
-		<div id="divTextoConteudo">Cadastro de Usuários do Sistema</div>
+		<div id="divTextoConteudo">Cadastro de Usuários</div>
 		<br><br>
 <center>
 
 	
-	<center><div id="divUser" style="display:none;"><font color="red" size="3" >Usuário já Cadastrado! Procure-o na busca de usuários.</font></div></center>
+	<div id="divUser" style="display:none;"><font color="red" size="3" >Usuário já Cadastrado! Procure-o na busca de usuários.</font></div></center>
 	<table>
 		<tr>
 			<td align="right" Class="Fonte01">Nome Usuário:&nbsp;&nbsp; </td>  
@@ -258,7 +258,11 @@
 			<table>
 				<tr>
 					<td></td>
-					<td><input type="button" value="Salvar Usuário" onclick="validaform();" class="button" > </td>
+					<td>
+						<input type="button" value="Voltar" onclick="window.location.href='buscaUsuario.do'" class="button">
+						&nbsp;&nbsp;
+						<input type="button" value="Salvar Usuário" onclick="validaform();" class="button" >
+					</td>
 				</tr>
 			</table>
 			</td>
@@ -266,12 +270,6 @@
 		</tr>
 	</table>
 
-
-</center>
-		
-
-				
-	
 	</div>
 	</div>
 	

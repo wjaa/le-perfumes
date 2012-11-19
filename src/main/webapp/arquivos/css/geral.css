@@ -4,7 +4,7 @@
 *{PADDING:1px;}
 
 body{
-	background-color:#E7D7FA; 
+	background-color:#E1F0E1; 
 }
 
 a{TEXT-DECORATION: none;}
@@ -300,13 +300,19 @@ h2{
 	color:#ffffff;
 	padding-left:8px;
 	padding-right:8px;
-	border: 1px solid #cdcdcd;
+	border: 1px solid black;
 	background-color: #D61920;
     cursor: pointer ; 
 }
 
 .button:hover{
 	color:#FF9900;
+	border: 1px solid #FF9900;
+}
+
+.buttonNew{
+	margin-left: 15px;
+	margin-bottom: 15px;	
 }
 
 .red-cell {

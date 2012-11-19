@@ -17,23 +17,17 @@
 			<li class="popular">
 				<a href="#" class="item popular">Administração Sistema</a> <!-- titulo menu 1 -->
 				<ul>
-					<li><a href="cadastroUsuario.do">Cadastro Usuários</a> </li>
-					<li><a href="buscaUsuario.do">Buscar Usuários</a> </li>
-					<li><a href="cadastroCliente.do">Cadastro Cliente</a> </li>
-					<li><a href="buscaCliente.do">Buscar Cliente</a> </li>
-					<li><a href="cadastroPerfume.do">Cadastro Perfume</a> </li>
-					<li><a href="buscaPerfume.do">Buscar Perfume</a> </li>
-					<li><a href="cadastroFornecedor.do">Cadastro Fornecedor</a> </li>
-					<li><a href="buscaFornecedor.do">Buscar Fornecedor</a> </li>
-					<li><a href="cadastroVendedor.do">Cadastro Vendedor</a> </li>
-					<li><a href="buscaVendedor.do">Buscar Vendedor</a> </li>
+					<li><a href="buscaUsuario.do">Cadastro de Usuários</a> </li>
+					<li><a href="buscaCliente.do">Cadastro de Cliente</a> </li>
+					<li><a href="buscaPerfume.do">Cadastro de Perfume</a> </li>
+					<li><a href="buscaFornecedor.do">Cadastro de Fornecedor</a> </li>
+					<li><a href="buscaVendedor.do">Cadastro de Vendedor</a> </li>
 				</ul>
 			</li>
 			<li class="popular">
 				<a href="#" class="item popular">Lote</a>
 				<ul>
-					<li><a href="manterLote.do?dispatch=createEdit">Criar Lote</a> </li>
-					<li><a href="manterLote.do?dispatch=search">Buscar Lote</a> </li>
+					<li><a href="manterLote.do?dispatch=search">Cadastro de Lote</a> </li>
 				</ul>
 			</li>
 			<li class="popular">
@@ -45,8 +39,7 @@
 			<li class="popular">
 				<a href="#" class="item popular">Venda</a>
 				<ul>
-					<li><a href="manterVenda.do?dispatch=createEdit">Criar Venda</a> </li>
-					<li><a href="manterVenda.do?dispatch=search">Buscar Venda</a> </li>
+					<li><a href="manterVenda.do?dispatch=search">Cadastro de Vendas</a> </li>
 				</ul>
 			</li>
 			<li class="popular">

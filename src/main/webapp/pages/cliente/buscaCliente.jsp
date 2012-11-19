@@ -26,58 +26,57 @@
 	<div id="DivConteudo">
 
 	<div id="divConteudo">
-		<div id="divTextoConteudo">&nbsp;&nbsp;Busca de Clientes </div>
+		<div id="divTextoConteudo">Busca de Clientes </div>
 		<br>
-		
+		<br>
+		<input type="button" class="button buttonNew" value="Criar um usuário" onclick="window.location.href='cadastroUsuario.do'"/>	
 		<form action="manterCliente.do?dispatch=buscarCliente" method="post">
 			
 			<table>
 				<tr>
 					<td Class="Fonte01">&nbsp;&nbsp;&nbsp;Nome</td>
 					<td Class="Fonte01">&nbsp;&nbsp;&nbsp;Cpf</td>
-					<td Class="Fonte01">&nbsp;&nbsp;&nbsp;Fone</td>
-					<td Class="Fonte01">&nbsp;&nbsp;&nbsp;Local Trabalho</td>
 				</tr>
 				<tr>
 					<td>&nbsp;&nbsp;<input type="text" id="nome" name="nome" class="input" size="30" class="input"></td>
 					<td>&nbsp;&nbsp;<input type="text" id="cpf" name="cpf" class="input" size="30" class="input"></td>
-					<td>&nbsp;&nbsp;<input type="text" id="fone" name="fone" class="input" size="30" class="input"></td>
-					<td>&nbsp;&nbsp;<input type="text" id="localTrab" name="localTrab" class="input" size="30" class="input"></td>
 					
 				</tr>
 				<tr>
-					<td>&nbsp; <input type="submit" value="Pesquisar Cliente"  class="button" > </td>		
+					<td Class="Fonte01">&nbsp;&nbsp;&nbsp;Fone</td>
+					<td Class="Fonte01">&nbsp;&nbsp;&nbsp;Local Trabalho</td>
+				</tr>
+				<tr>
+					<td>&nbsp;&nbsp;<input type="text" id="fone" name="fone" class="input" size="30" class="input"></td>
+					<td>&nbsp;&nbsp;<input type="text" id="localTrab" name="localTrab" class="input" size="30" class="input"></td>
+				</tr>
+				<tr>
+					<td height="50px;">&nbsp; <input type="submit" value="Pesquisar Cliente"  class="button"> </td>		
 				</tr>
 			</table>
+		</form>	
+		<br>
+
+
+		<div> <!-- Div display tag -->
+
+			<display:table id="listCliente" name="${modeloBusca.clienteVo}" sort="list" pagesize="5" export="false"  class="displaytag"
+			requestURI="manterCliente.do?dispatch=buscarCliente">
 			
-			 
+				<display:column property="idCliente" title="Id" sortable="true"/>
+				<display:column property="nomeFull" title="Nome" sortable="true"  />
+				<display:column property="cpf" title="Cpf" sortable="true"  />
+				<display:column property="fone1" title="Fone 1" sortable="true"  />
+				<display:column property="fone2" title="Fone 2" sortable="true"  />
+				<display:column property="contato" title="Contato" sortable="true"  />
+				<display:column title="Ação"><a href="manterCliente.do?dispatch=editarCliente&idCliente=${listCliente.idCliente}">Alterar</a>&nbsp;&nbsp;<a href="#" onclick="removerCliente(${listCliente.idCliente});">Remover</a></display:column>
+				
 			
-	
-</form>	
-<br>
-
-<center>
-<div> <!-- Div display tag -->
-
-<display:table id="listCliente" name="${modeloBusca.clienteVo}" sort="list" pagesize="5" export="false"  class="displaytag"
-requestURI="manterCliente.do?dispatch=buscarCliente">
-
-	<display:column property="idCliente" title="Id" sortable="true"/>
-	<display:column property="nomeFull" title="Nome" sortable="true"  />
-	<display:column property="cpf" title="Cpf" sortable="true"  />
-	<display:column property="fone1" title="Fone 1" sortable="true"  />
-	<display:column property="fone2" title="Fone 2" sortable="true"  />
-	<display:column property="contato" title="Contato" sortable="true"  />
-	<display:column title="Ação"><a href="manterCliente.do?dispatch=editarCliente&idCliente=${listCliente.idCliente}">Alterar</a>&nbsp;&nbsp;<a href="#" onclick="removerCliente(${listCliente.idCliente});">Remover</a></display:column>
-	
-
-</display:table>
+			</display:table>
 
 
-</div> <!-- FIM Div display tag -->			
+		</div> <!-- FIM Div display tag -->			
 
-</center>
-	
 	</div>
 	</div>
 	

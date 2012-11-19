@@ -25,11 +25,11 @@
 <!--  	<h1>Sistema de Controle "</h1>-->
 
 	<div id="divConteudo">
-		<div id="divTextoConteudo">Busca de Usuários do Sistema</div>
+		<div id="divTextoConteudo">Busca de Usuários</div>
 		<br>
 		<br>
-		
-<form action="manterUsuario.do?dispatch=buscarUsuario" method="post">
+		<input type="button" class="button buttonNew" value="Criar um usuário" onclick="window.location.href='cadastroUsuario.do'"/>
+		<form action="manterUsuario.do?dispatch=buscarUsuario" method="post">
 			<table>
 				<tr>
 					<td >&nbsp; Nome:&nbsp; </td>
@@ -37,32 +37,28 @@
 					<td>&nbsp; <input type="submit" value="Pesquisar Usuário"  class="button" > </td>
 				</tr>	
 			</table> 
+		</form>	
+		<br>
+
+
+		<div class="displayTag"> <!-- Div display tag -->
+
+			<display:table id="listUser" name="${modeloBusca.consultaUsuarioVo}" sort="list" pagesize="5" export="false"  class="displaytag"
+			requestURI="manterUsuario.do?dispatch=buscarUsuario">
 			
-	
-</form>	
-<br>
-
-
-<div class="displayTag"> <!-- Div display tag -->
-
-<display:table id="listUser" name="${modeloBusca.consultaUsuarioVo}" sort="list" pagesize="5" export="false"  class="displaytag"
-requestURI="manterUsuario.do?dispatch=buscarUsuario">
-
-	<display:column property="idUsuario" title="#" sortable="true"  />
-	<display:column property="nomeFull" title="Nome Usuário" sortable="true"  />
-	<display:column property="nome" title="Login Usuário" sortable="true"  />
-	<display:column title="Ação">
-		<input type="button" value="Alterar" onclick="window.location = manterUsuario.do?dispatch=editar&idUsuario=${listUser.idUsuario}" class="button" >
-		&nbsp
-		<input type="button" onclick="removerUsuario(${listUser.idUsuario});" value="Remover"  class="button" >
-	</display:column>
-
-</display:table>
-
-
-</div> <!-- FIM Div display tag -->			
-
-
+				<display:column property="idUsuario" title="#" sortable="true"  />
+				<display:column property="nomeFull" title="Nome Usuário" sortable="true"  />
+				<display:column property="nome" title="Login Usuário" sortable="true"  />
+				<display:column title="Ação">
+					<input type="button" value="Alterar" onclick="window.location = manterUsuario.do?dispatch=editar&idUsuario=${listUser.idUsuario}" class="button" >
+					&nbsp
+					<input type="button" onclick="removerUsuario(${listUser.idUsuario});" value="Remover"  class="button" >
+				</display:column>
+			
+			</display:table>
+			
+			
+		</div> <!-- FIM Div display tag -->			
 	
 	</div>
 	</div>
