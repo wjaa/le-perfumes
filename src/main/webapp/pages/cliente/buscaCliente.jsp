@@ -29,7 +29,7 @@
 		<div id="divTextoConteudo">Busca de Clientes </div>
 		<br>
 		<br>
-		<input type="button" class="button buttonNew" value="Criar um usuário" onclick="window.location.href='cadastroUsuario.do'"/>	
+		<input type="button" class="button buttonNew" value="Criar um novo cliente" onclick="window.location.href='cadastroCliente.do'"/>	
 		<form action="manterCliente.do?dispatch=buscarCliente" method="post">
 			
 			<table>
@@ -63,7 +63,7 @@
 			<display:table id="listCliente" name="${modeloBusca.clienteVo}" sort="list" pagesize="5" export="false"  class="displaytag"
 			requestURI="manterCliente.do?dispatch=buscarCliente">
 			
-				<display:column property="idCliente" title="Id" sortable="true"/>
+				<display:column property="idCliente" title="#" sortable="true"/>
 				<display:column property="nomeFull" title="Nome" sortable="true"  />
 				<display:column property="cpf" title="Cpf" sortable="true"  />
 				<display:column property="fone1" title="Fone 1" sortable="true"  />

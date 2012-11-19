@@ -28,9 +28,10 @@
 	<div id="divConteudo">
 		<div id="divTextoConteudo">Busca de Perfumes </div>
 		<br>
+		<br>
+		<input type="button" class="button buttonNew" value="Criar um novo perfume" onclick="window.location.href='cadastroPerfume.do'"/>			
 		
-		
-<form action="manterPerfume.do?dispatch=buscarPerfume" method="post">
+		<form action="manterPerfume.do?dispatch=buscarPerfume" method="post">
 			
 			<table>
 				<tr>
@@ -42,28 +43,30 @@
 					<td>&nbsp;&nbsp;<input type="text" id="marca" name="marca" class="input" size="30" class="input"></td>
 				</tr>
 				<tr>
-					<td>&nbsp; <input type="submit" value="Pesquisar Perfumes"  class="button" > </td>		
+					<td height="50px;">&nbsp; <input type="submit" value="Pesquisar Perfumes"  class="button" > </td>		
 				</tr>
 			</table>
-			
-			 
-			
 	
-</form>	
+		</form>	
 <br>
 
-<center>
+
 <div> <!-- Div display tag -->
 
 <display:table id="listPerf" name="${modeloBusca.perfumeVo}" sort="list" pagesize="5" export="false"  class="displaytag"
 requestURI="manterPerfume.do?dispatch=buscarPerfume">
 
-	<display:column property="idPerfume" title="Id Perfume" sortable="true"/>
+	<display:column property="idPerfume" title="#" sortable="true"/>
 	<display:column property="nome" title="Nome Perfume" sortable="true"  />
 	<display:column property="marca" title="Marca Perfume" sortable="true"  />
 	<display:column property="tamanho" title="Tamanho(ml)" sortable="true"  />
 	<display:column property="tipo" title="Tipo Perfume" sortable="true"  />
-	<display:column title="Ação"><a href="manterPerfume.do?dispatch=editarPerfume&idPerfume=${listPerf.idPerfume}">Alterar</a>&nbsp;&nbsp;<a href="#" onclick="removerPerfume(${listPerf.idPerfume})">Remover</a></display:column>
+	<display:column title="Ação">
+		<input type="button" value="Alterar" onclick="window.location.href='manterPerfume.do?dispatch=editarPerfume&idPerfume=${listPerf.idPerfume}'" class="button"/>
+		&nbsp;&nbsp;
+		<input type="button" onclick="window.location.href='manterPerfume.do?dispatch=editarPerfume&idPerfume=${listPerf.idPerfume}'" class="button"/>
+		<a href="#" onclick="removerPerfume(${listPerf.idPerfume})">Remover</a>
+	</display:column>
 	
 
 </display:table>
@@ -71,7 +74,7 @@ requestURI="manterPerfume.do?dispatch=buscarPerfume">
 
 </div> <!-- FIM Div display tag -->			
 
-</center>
+
 	
 	</div>
 	</div>

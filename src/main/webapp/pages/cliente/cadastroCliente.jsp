@@ -168,14 +168,13 @@
 		<div id="divTextoConteudo">Cadastro de Clientes</div><br>
 		<div id="divRetorno" style="display:none;"><font color="red" size="3" >* Verifique os campos em Vermelho</font></div>
 		<br><br>
-<center>
 
 	
-	<center><div id="divCliente" style="display:none;"><font color="red" size="4" >Cliente já Cadastrado no Banco de Dados</font></div></center>
+	<div id="divCliente" style="display:none;"><font color="red" size="4" >Cliente já Cadastrado no Banco de Dados</font></div>
 	
 	
 <form action="">	
-	<table align="center" >
+	<table>
 	
 		<tr>
 			<td id="fieldNome" class="Fonte01" colspan="2">Nome </td>
@@ -284,20 +283,15 @@
 		</tr>
 		
 		<tr>
-			<td height="45" colspan="3" align="center"><input type="button" value="Salvar Cliente" onclick="validaform();" class="button"> </td>	
+			<td height="45" colspan="3" align="center">
+				<input type="button" value="Voltar" onclick="window.location.href='buscaCliente.do'" class="button">
+				&nbsp;
+				&nbsp;	
+				<input type="button" value="Salvar Cliente" onclick="validaform();" class="button"> 
+			</td>	
 		</tr>		
 	</table>
 </form>	
-	
-	
-	
-	
-
-
-</center>
-		
-
-				
 	
 	</div>
 	</div>

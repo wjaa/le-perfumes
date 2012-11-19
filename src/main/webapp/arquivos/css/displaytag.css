@@ -88,7 +88,7 @@ TABLE.displaytag {
  	        display:table;
  	        border-bottom: none;
  	        text-align: center;
- 	        background-color: #E1F0E1;
+ 	        background-color: #F2F2F2;
  	}
  	
  	span.pagelinks {
@@ -103,7 +103,7 @@ TABLE.displaytag {
  	        border-top: none;
  	        margin-bottom: 5px;
  	        text-align: center;
- 	        background-color: #E1F0E1;
+ 	        background-color: #F2F2F2;
  	}
  	
  	span.pagelinks a {

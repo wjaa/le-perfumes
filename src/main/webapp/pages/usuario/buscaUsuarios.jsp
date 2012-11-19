@@ -28,7 +28,7 @@
 		<div id="divTextoConteudo">Busca de Usuários</div>
 		<br>
 		<br>
-		<input type="button" class="button buttonNew" value="Criar um usuário" onclick="window.location.href='cadastroUsuario.do'"/>
+		<input type="button" class="button buttonNew" value="Criar um novo usuário" onclick="window.location.href='cadastroUsuario.do'"/>
 		<form action="manterUsuario.do?dispatch=buscarUsuario" method="post">
 			<table>
 				<tr>
