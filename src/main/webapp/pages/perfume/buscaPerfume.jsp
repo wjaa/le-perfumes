@@ -64,8 +64,7 @@ requestURI="manterPerfume.do?dispatch=buscarPerfume">
 	<display:column title="Ação">
 		<input type="button" value="Alterar" onclick="window.location.href='manterPerfume.do?dispatch=editarPerfume&idPerfume=${listPerf.idPerfume}'" class="button"/>
 		&nbsp;&nbsp;
-		<input type="button" onclick="window.location.href='manterPerfume.do?dispatch=editarPerfume&idPerfume=${listPerf.idPerfume}'" class="button"/>
-		<a href="#" onclick="removerPerfume(${listPerf.idPerfume})">Remover</a>
+		<input type="button" value="Remover" onclick="removerPerfume(${listPerf.idPerfume})" class="button"/>
 	</display:column>
 	
 

@@ -34,7 +34,9 @@
 				<tr>
 					<td >&nbsp; Nome:&nbsp; </td>
 					<td>&nbsp; <input type="text" id="nome" name="nome" class="input" size="30"></td>
-					<td>&nbsp; <input type="submit" value="Pesquisar Usuário"  class="button" > </td>
+				</tr>
+				<tr>
+					<td height="50px;">&nbsp; <input type="submit" value="Pesquisar Usuário"  class="button" > </td>
 				</tr>	
 			</table> 
 		</form>	

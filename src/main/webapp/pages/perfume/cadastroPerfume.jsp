@@ -122,58 +122,55 @@
 	<div id="divConteudo">
 		<div id="divTextoConteudo">Cadastro de Perfumes</div><br>
 		<div id="divRetorno" style="display:none;"><font color="red" size="3" >* Verifique os campos em Vermelho</font></div>
-		<br><br>
-<center>
-
-	
-<form action="">	
-	<table align="center" >
-		<tr>
-			<td id="fieldNome" class="Fonte01">Nome </td>
-			<td id="fieldMarca" class="Fonte01">Marca </td>
-		</tr>		
-		<tr>
-			<td><input type="text" id="nome" name="nome" class="input" size="50">&nbsp;</td>
-			<td><input type="text" id="marca" name="marca" class="input" size="30"></td>
-		</tr>
-	
-		<tr><td></td></tr>
-		<tr>
-			<td id="fieldTipo" class="Fonte01" >Tipo Perfume</td>
-			<td id="fieldTamanho" class="Fonte01" >Tamanho (ml)</td>
-		</tr>
-			
-		<tr>
-			<td> 
-				<select id="tipo" class="input">
-					<option>...</option>
-					<option value="Masculino" >Masculino &nbsp;</option>
-					<option value="Feminino">Feminino&nbsp; </option>
-					<option value="Unisexy" >Unisexy &nbsp;</option>
-				</select>
-			</td>
-			<td><input type="text" id="tamanho" class="input" size="5">&nbsp;</td>
-			
-			</tr>	
-		<tr><td></td></tr>
-		<tr><td></td></tr>
-		
-		<tr>
-			<td class="Fonte01" >Observação</td>
-		</tr>
-		<tr>
-			<td><textarea id="observ" rows="2" cols="30" class="input"></textarea>&nbsp;&nbsp;&nbsp;</td>
-		</tr>
 		<br>
-		<tr>
-			<td height="45" colspan="3" align="center"><input type="button" value="Salvar Perfume" onclick="validaform();" class="button"> </td>	
-		</tr>		
-	</table>
-</form>	
-
-</center>
-		
+		<br>
 	
+		<form action="">	
+			<table>
+				<tr>
+					<td id="fieldNome" class="Fonte01">Nome </td>
+					<td id="fieldMarca" class="Fonte01">Marca </td>
+				</tr>		
+				<tr>
+					<td><input type="text" id="nome" name="nome" class="input" size="50">&nbsp;</td>
+					<td><input type="text" id="marca" name="marca" class="input" size="30"></td>
+				</tr>
+			
+				<tr><td></td></tr>
+				<tr>
+					<td id="fieldTipo" class="Fonte01" >Tipo Perfume</td>
+					<td id="fieldTamanho" class="Fonte01" >Tamanho (ml)</td>
+				</tr>
+					
+				<tr>
+					<td> 
+						<select id="tipo" class="input">
+							<option>...</option>
+							<option value="Masculino" >Masculino &nbsp;</option>
+							<option value="Feminino">Feminino&nbsp; </option>
+							<option value="Unisexy" >Unisexy &nbsp;</option>
+						</select>
+					</td>
+					<td><input type="text" id="tamanho" class="input" size="5">&nbsp;</td>
+					
+					</tr>	
+				<tr><td></td></tr>
+				<tr><td></td></tr>
+				
+				<tr>
+					<td class="Fonte01" >Observação</td>
+				</tr>
+				<tr>
+					<td><textarea id="observ" rows="2" cols="30" class="input"></textarea>&nbsp;&nbsp;&nbsp;</td>
+				</tr>
+				<tr>
+					<td height="45" colspan="3" align="center">
+						<input type="button" value="Voltar" onclick="window.location.href='buscaPerfume.do'" class="button">
+						<input type="button" value="Salvar Perfume" onclick="validaform();" class="button"> 
+					</td>	
+				</tr>		
+			</table>
+		</form>	
 	</div>
 	</div>
 	
