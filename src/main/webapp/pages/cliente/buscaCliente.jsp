@@ -69,7 +69,10 @@
 				<display:column property="fone1" title="Fone 1" sortable="true"  />
 				<display:column property="fone2" title="Fone 2" sortable="true"  />
 				<display:column property="contato" title="Contato" sortable="true"  />
-				<display:column title="Ação"><a href="manterCliente.do?dispatch=editarCliente&idCliente=${listCliente.idCliente}">Alterar</a>&nbsp;&nbsp;<a href="#" onclick="removerCliente(${listCliente.idCliente});">Remover</a></display:column>
+				<display:column title="Ação">
+					<input type="button" class="button" onclick="window.location.href='manterCliente.do?dispatch=editarCliente&idCliente=${listCliente.idCliente}'" value="Alterar"/>&nbsp;&nbsp;
+					<input type="button" class="button" onclick="removerCliente(${listCliente.idCliente});" value="Remover"/>
+					</display:column>
 				
 			
 			</display:table>

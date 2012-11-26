@@ -284,10 +284,10 @@
 		
 		<tr>
 			<td height="45" colspan="3" align="center">
-				<input type="button" value="Voltar" onclick="window.location.href='buscaCliente.do'" class="button">
+				<input type="button" value="Voltar" onclick="window.location.href='buscaCliente.do'" class="button"/>
 				&nbsp;
 				&nbsp;	
-				<input type="button" value="Salvar Cliente" onclick="validaform();" class="button"> 
+				<input type="button" value="Salvar Cliente" onclick="validaform();" class="button"/> 
 			</td>	
 		</tr>		
 	</table>

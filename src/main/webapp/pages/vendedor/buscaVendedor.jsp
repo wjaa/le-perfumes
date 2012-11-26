@@ -27,18 +27,27 @@
 	<div id="divConteudo">
 		<div id="divTextoConteudo">Busca de Vendedores</div>
 		<br>
+		<br>
+		<input type="button" class="button buttonNew" value="Criar um novo vendedor" onclick="window.location.href='cadastroVendedor.do'"/>
 		
 <form action="manterVendedor.do?dispatch=list" method="post">
-			
-			<td >&nbsp; Nome:&nbsp; </td>
-			<td>&nbsp; <input type="text" id="nome" name="nome" class="input" size="30"></td>
-			<td>&nbsp; <input type="submit" value="Pesquisar Vendedor"  class="button" > </td> 
+			<table>
+				<tr>
+					<td class="Fonte01">&nbsp;&nbsp;&nbsp;Nome </td>
+				</tr>
+				<tr>
+					<td >&nbsp; <input type="text" id="nome" name="nome" class="input" size="30"></td>
+				</tr>
+				<tr>
+					<td height="50px;">&nbsp; <input type="submit" value="Pesquisar Vendedor"  class="button" > </td> 
+				</tr>
+			</table>
 			
 	
 </form>	
 <br>
 
-<center>
+
 <div> <!-- Div display tag -->
 
 <display:table id="vend" name="${models}" sort="list" pagesize="5" export="false"  class="displaytag"
@@ -47,14 +56,19 @@ requestURI="manterFornecedor.do?dispatch=buscar">
 	<display:column property="id" title="Id Vendedor" sortable="true"  />
 	<display:column property="nome" title="Nome Vendedor" sortable="true"  />
 	<display:column property="telefone" title="Telefone" sortable="true"  />
-	<display:column title="Ação"><a href="manterVendedor.do?dispatch=viewCreate&idVendedor=${vend.id}">Alterar</a>&nbsp;&nbsp;<a href="#" onclick="removerVendedor(${vend.id});">Remover</a></display:column>
+	<display:column title="Ação">
+		<input type="button" class="button"  onclick="window.location.href='manterVendedor.do?dispatch=viewCreate&idVendedor=${vend.id}'" value="Alterar"/>
+		&nbsp;
+		&nbsp;
+		<input type="button" class="button" onclick="removerVendedor(${vend.id});" value="Remover"/>
+	</display:column>
 
 </display:table>
 
 
 </div> <!-- FIM Div display tag -->			
 
-</center>
+
 	
 	</div>
 	</div>

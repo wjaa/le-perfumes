@@ -84,7 +84,12 @@
 							<td colspan="2">&nbsp;</td>
 						</tr>
 						<tr>
-							<td colspan="3" align="center"><html:submit styleClass="button" value="Salvar" /> </td>
+							<td colspan="3" align="center">
+								<input type="button" class="button" value="Voltar" onclick="window.location.href='buscaFornecedor.do'" />
+								&nbsp;
+								&nbsp;
+								<html:submit styleClass="button" value="Salvar" /> 
+							</td>
 							
 							
 						</tr>

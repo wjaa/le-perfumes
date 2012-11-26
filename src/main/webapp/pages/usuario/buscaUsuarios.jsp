@@ -52,7 +52,7 @@
 				<display:column property="nomeFull" title="Nome Usuário" sortable="true"  />
 				<display:column property="nome" title="Login Usuário" sortable="true"  />
 				<display:column title="Ação">
-					<input type="button" value="Alterar" onclick="window.location = manterUsuario.do?dispatch=editar&idUsuario=${listUser.idUsuario}" class="button" >
+					<input type="button" value="Alterar" onclick="window.location.href='manterUsuario.do?dispatch=editar&idUsuario=${listUser.idUsuario}'" class="button" >
 					&nbsp
 					<input type="button" onclick="removerUsuario(${listUser.idUsuario});" value="Remover"  class="button" >
 				</display:column>

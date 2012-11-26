@@ -78,7 +78,7 @@
 
 	
 		if(retorno){
-			$.post("/controle/manterPerfume.do?",{dispatch: "editar",
+			$.post("manterPerfume.do?",{dispatch: "editar",
 				nome: nome,
 				marca: marca,
 				tipo: tipo,
@@ -95,9 +95,9 @@
 						}else{
 							jConfirm('Deseja cadastrar outro perfume?', 'PERFUME SALVO COM SUCESSO!', function(r) {
 									if(r){
-										window.location.href="/controle/cadastroPerfume.do";
+										window.location.href="cadastroPerfume.do";
 									}else{
-										window.location.href="/controle/buscaPerfume.do";
+										window.location.href="buscaPerfume.do";
 									}	
 							});
 						}
@@ -159,22 +159,10 @@
 		<tr>
 			<td> 
 				<select id="tipo" class="input">
-					<option  ></option>
-					<c:if test="${perf.tipo == 'Masculino'}">
-						<option value="Masculino"  selected="selected">&nbsp; Masculino &nbsp;</option>	
-						<option value="Feminino">&nbsp; Feminino&nbsp; </option>
-						<option value="Unisexy" >&nbsp; Unisexy &nbsp;</option>
-					</c:if>
-					<c:if test="${perf.tipo == 'Feminino'}">
-						<option value="Masculino" >&nbsp; Masculino &nbsp;</option>	
-						<option value="Feminino"  selected="selected">&nbsp; Feminino&nbsp; </option>
-						<option value="Unisexy" >&nbsp; Unisexy &nbsp;</option>
-					</c:if>
-					<c:if test="${perf.tipo == 'Unisexy'}">
-						<option value="Masculino">&nbsp; Masculino &nbsp;</option>	
-						<option value="Feminino">&nbsp; Feminino&nbsp; </option>
-						<option value="Unisexy" selected="selected">&nbsp; Unisexy &nbsp;</option>
-					</c:if>
+					<option  >... &nbsp;</option>
+						<option value="Masculino" <c:if test="${perf.tipo == 'Masculino'}"> selected="selected"</c:if>  >Masculino &nbsp;</option>	
+						<option value="Feminino" <c:if test="${perf.tipo == 'Feminino'}"> selected="selected"</c:if>>Feminino &nbsp; </option>
+						<option value="Unisexy" <c:if test="${perf.tipo == 'Unisexy'}"> selected="selected"</c:if>>Unisexy &nbsp;</option>
 				</select>
 			</td>
 			<td><input type="text" id="tamanho" class="input" size="5" value="${perf.tamanho}">&nbsp;</td>
@@ -191,7 +179,12 @@
 		</tr>
 		<br>
 		<tr>
-			<td height="45" colspan="3" align="center"><input type="button" value="Salvar Perfume" onclick="validaform();" class="button"> </td>	
+			<td height="45" colspan="3" align="center">
+				<input type="button" value="Voltar" onclick="window.location.href='buscaPerfume.do'" class="button">
+				&nbsp;
+				&nbsp;
+				<input type="button" value="Salvar Perfume" onclick="validaform();" class="button"> 
+			</td>	
 		</tr>		
 	</table>
 </form>	

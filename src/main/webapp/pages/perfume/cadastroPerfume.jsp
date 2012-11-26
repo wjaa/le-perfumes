@@ -75,7 +75,7 @@
 
 	
 		if(retorno){
-			$.post("/controle/manterPerfume.do?",{dispatch: "salvar",
+			$.post("manterPerfume.do?",{dispatch: "salvar",
 				nome: nome,
 				marca: marca,
 				tipo: tipo,
@@ -91,9 +91,9 @@
 						}else{
 							jConfirm('Deseja criar outro perfume?', 'PERFUME CADASTRADO COM SUCESSO!', function(r) {
 									if(r){
-										window.location.href="/controle/cadastroPerfume.do";
+										window.location.href="cadastroPerfume.do";
 									}else{
-										window.location.href="/controle/buscaPerfume.do";
+										window.location.href="buscaPerfume.do";
 									}	
 							});
 						}
@@ -166,6 +166,8 @@
 				<tr>
 					<td height="45" colspan="3" align="center">
 						<input type="button" value="Voltar" onclick="window.location.href='buscaPerfume.do'" class="button">
+						&nbsp;
+						&nbsp;
 						<input type="button" value="Salvar Perfume" onclick="validaform();" class="button"> 
 					</td>	
 				</tr>		

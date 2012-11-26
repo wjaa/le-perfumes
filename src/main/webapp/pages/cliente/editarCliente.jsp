@@ -128,7 +128,7 @@
 
 	
 		if(retorno){
-			$.post("/controle/manterCliente.do?",{dispatch: "editar",
+			$.post("manterCliente.do?",{dispatch: "editar",
 				nome : nome ,
 				cpf : cpf ,
 				dddFone1 : dddFone1 ,
@@ -165,9 +165,9 @@
 						}else{
 							jConfirm('Deseja criar um novo cliente?', 'Cliente salvo com sucesso!', function(r) {
 									if(r){
-										window.location.href="/controle/cadastroCliente.do";
+										window.location.href="cadastroCliente.do";
 									}else{
-										window.location.href="/controle/buscaCliente.do";
+										window.location.href="buscaCliente.do";
 									}	
 							});
 						}
@@ -248,26 +248,16 @@
 			<td colspan="1"> <input type="text" id="email" class="input" size="33" value="${cliente.email}">&nbsp;&nbsp;&nbsp;</td>
 			<td> 
 				<select id="contato" class="input">
-					<c:if test="${cliente.contato == 'Leandro'}">
-						<option value="Leandro"  selected="selected">&nbsp; Leandro &nbsp;</option>	
-						<option value="Junior" >&nbsp; Junior&nbsp; </option>
-					</c:if>
-					<c:if test="${cliente.contato == 'Junior'}">
-						<option value="Junior" selected="selected">&nbsp; Junior&nbsp; </option>
-						<option value="Leandro"  selected="selected">&nbsp; Leandro &nbsp;</option>	
-					</c:if>
+					<option value="...">...&nbsp;</option>
+					<option value="Leandro"  <c:if test="${cliente.contato == 'Leandro'}">selected="selected"</c:if>   >Leandro &nbsp;</option>	
+					<option value="Junior" <c:if test="${cliente.contato == 'Junior'}">selected="selected"</c:if>  >Junior&nbsp; </option>
 				</select>
 			</td>
 			<td align="left">
 				<select id="sexo" class="input">
-					<c:if test="${cliente.sexo == 0}">
-						<option value="0" selected="selected">&nbsp; Masculino &nbsp;</option>	
-						<option value="1">&nbsp; Feminino &nbsp; </option>
-					</c:if>
-					<c:if test="${cliente.sexo == 1}">
-						<option value="1" selected="selected">&nbsp; Feminino &nbsp; </option>
-						<option value="0" >&nbsp; Masculino &nbsp;</option>	
-					</c:if>
+					<option value="-1">...&nbsp;</option>
+					<option value="0" <c:if test="${cliente.sexo == 0}">selected="selected"</c:if> >Masculino &nbsp;</option>	
+					<option value="1" <c:if test="${cliente.sexo == 1}">selected="selected"</c:if>>Feminino &nbsp; </option>
 				</select>		
 			</td>
 		</tr>
@@ -356,7 +346,11 @@
 		</tr>
 		
 		<tr>
-			<td height="45" colspan="3" align="center"><input type="button" value="Salvar Cliente" onclick="validaform();" class="button"> </td>	
+			<td height="45" colspan="3" align="center">
+				<input type="button" value="Voltar" onclick="window.location.href='buscaCliente.do'" class="button"/>
+				&nbsp;
+				&nbsp;
+				<input type="button" value="Salvar Cliente" onclick="validaform();" class="button"> </td>	
 		</tr>		
 	</table>
 </form>	

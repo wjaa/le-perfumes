@@ -45,7 +45,12 @@
 						</tr>
 						
 						<tr>
-							<td colspan="3" align="center"><html:submit styleClass="button" value="Salvar" /> </td>
+							<td colspan="3" align="center">
+								<input type="button" value="Voltar" onclick="window.location.href='buscaVendedor.do'" class="button"/>
+								&nbsp;
+								&nbsp;
+								<html:submit styleClass="button" value="Salvar" /> 
+							</td>
 							
 							
 						</tr>

@@ -95,7 +95,7 @@
 		
 		divUser.hide();
 		if(retorno){
-			$.post("/controle/manterUsuario.do?",{dispatch: "salvar",
+			$.post("manterUsuario.do?",{dispatch: "salvar",
 					idUsuario: idUsuario,
 					nomeFull: nomeFull ,
 					nome: nome,
@@ -116,9 +116,9 @@
 							jConfirm('Deseja criar um novo usuário?', 'USUÁRIO SALVO COM SUCESSO!', function(r) {
 								
 									if(r){
-										window.location.href="/controle/cadastroUsuario.do";
+										window.location.href="cadastroUsuario.do";
 									}else{
-										window.location.href="/controle/buscaUsuario.do";
+										window.location.href="buscaUsuario.do";
 									}	
 							});
 									
